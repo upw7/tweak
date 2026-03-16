@@ -498,4 +498,9 @@ function Tweak-DisableCrossDeviceResume {
 
 function Tweak-EnableDarkTheme {
     Write-Log "Enabling Dark theme..." "HEAD"
-    Set-Reg "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes
+
+    Set-Reg "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" "AppsUseLightTheme" 0
+    Set-Reg "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" "SystemUsesLightTheme" 0
+
+    Write-Log "Dark theme enabled." "OK"
+}
